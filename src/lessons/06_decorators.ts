@@ -9,7 +9,7 @@ function Logger(logString: string) {
 function WithTemplate(template: string, hookId: string) {
   return function<T extends {new(...args: any[]): {name: string} }>(originalConstructor: T) {
     return class extends originalConstructor {
-      constructor(...args: any[]) {
+      constructor(..._args: any[]) {
         super();
         console.log("Rendering template...")
         const hookEl = document.getElementById(hookId);
